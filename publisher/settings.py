@@ -4,9 +4,9 @@
 export_path = '/home/kong/project/publisher/data'
 server_path = 'publisher'
 server_data_path = 'publisher/data'
-server_ip = "solidai.net"
-server_username = 'solidai'
-server_passwd = '1234567890)(*&^%$#@!'
+server_ip = ""
+server_username = ''
+server_passwd = ''
 
 git_projects = {
     "/home/kong/project": ['solidai_bill', 'solidai_dash', 'solidai_invest',

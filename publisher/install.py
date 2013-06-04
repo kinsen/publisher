@@ -51,5 +51,5 @@ for pkg in packages:
     target_dir = os.path.join(TARGET_DIR, pkg)
     if os.path.exists(target_dir):
         os.chdir(target_dir)
-        call["python", "setup.py", "develop"]
+        call(["python", "setup.py", "develop"])
 
