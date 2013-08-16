@@ -12,13 +12,13 @@ TARGET_DIR = sys.argv[1] if \
     len(sys.argv) >= 2 else '/home/solidai/install/install'  # this path is the web app's install path
 BACKUP_DIR = os.path.join(TOP_DIR, "backup")  # you can set other path too.
 
-if not os.path.exists(BACKUP_DIR):
-    os.makedirs(BACKUP_DIR)
-
-def backup(project):
+def backup(project_name):
     current_version = datetime.now().strftime('%Y%m%d%H%M%S')
-    backup_name = "%s_%s.tar.gz" % (project_name, current_version)
-    backup_dir = os.path.join(BACKUP_DIR, backup_name)
+    backup_name = "%s.tar.gz" % (current_version)
+    backup_dir = os.path.join(BACKUP_DIR, project_name)
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    backup_dir = os.path.join(backup_dir, backup_name)
     call(['tar', '-czf', backup_dir, '-C', TARGET_DIR, project_name])  # backup
 
 tar_list = [filename for filename in os.listdir(DATA_DIR)
